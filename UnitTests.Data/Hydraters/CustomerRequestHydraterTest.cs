@@ -28,7 +28,7 @@ namespace UnitTests.Data.Hydraters
         private void InitializeTestDataTable()
         {
             TestDataTable = new DataTable();
-            TestDataTable.Columns.Add(CustomerRequestColumnNames.Identity, typeof(int));
+            TestDataTable.Columns.Add(CustomerRequestColumnNames.SequenceNumber, typeof(int));
             TestDataTable.Columns.Add(CustomerRequestColumnNames.Status, typeof(string));
             TestDataTable.Columns.Add(CustomerRequestColumnNames.BusinessEntityName, typeof(string));
             TestDataTable.Columns.Add(CustomerRequestColumnNames.TypeCode, typeof(string));
@@ -98,7 +98,7 @@ namespace UnitTests.Data.Hydraters
         {
             DataRow testDataRow = TestDataTable.NewRow();
 
-            testDataRow[CustomerRequestColumnNames.Identity] = 1 + (increment ?? 0);
+            testDataRow[CustomerRequestColumnNames.SequenceNumber] = 1 + (increment ?? 0);
             testDataRow[CustomerRequestColumnNames.Status] = "Status" + (increment.HasValue ? increment.Value.ToString() : String.Empty);
             testDataRow[CustomerRequestColumnNames.BusinessEntityName] = "BusinessEntityName" + (increment.HasValue ? increment.Value.ToString() : String.Empty);
             testDataRow[CustomerRequestColumnNames.TypeCode] = "TypeCode" + (increment.HasValue ? increment.Value.ToString() : String.Empty);

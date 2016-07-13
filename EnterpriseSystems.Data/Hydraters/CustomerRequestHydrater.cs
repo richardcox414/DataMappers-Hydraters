@@ -28,7 +28,7 @@ namespace EnterpriseSystems.Data.Hydraters
         {
             var customerRequest = new CustomerRequestVO
             {
-                Identity = (int)dataRow[CustomerRequestColumnNames.Identity],
+                Identity = (int)dataRow[CustomerRequestColumnNames.SequenceNumber],
                 Status = dataRow[CustomerRequestColumnNames.Status].ToString(),
                 BusinessEntityKey = dataRow[CustomerRequestColumnNames.BusinessEntityName].ToString(),
                 TypeCode = dataRow[CustomerRequestColumnNames.TypeCode].ToString(),

@@ -1,0 +1,5 @@
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\EnterpriseSystems.Data\bin\Debug\EnterpriseSystems.Data.dll
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\EnterpriseSystems.Data\bin\Debug\EnterpriseSystems.Data.pdb
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\EnterpriseSystems.Data\obj\Debug\EnterpriseSystems.Data.csprojResolveAssemblyReference.cache
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\EnterpriseSystems.Data\obj\Debug\EnterpriseSystems.Data.dll
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\EnterpriseSystems.Data\obj\Debug\EnterpriseSystems.Data.pdb

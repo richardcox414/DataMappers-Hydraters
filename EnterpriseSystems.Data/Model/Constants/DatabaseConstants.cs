@@ -37,7 +37,7 @@
 
     public class CustomerRequestColumnNames
     {
-        public const string Identity = "CUS_REQ_I";
+        public const string SequenceNumber = "CUS_REQ_I";
         public const string Status = "PRS_STT";
         public const string BusinessEntityName = "BUS_UNT_KEY_CH";
         public const string TypeCode = "REQ_TYP_C";

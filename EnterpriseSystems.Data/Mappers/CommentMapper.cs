@@ -25,7 +25,6 @@ namespace EnterpriseSystems.Data.Mappers
         {
             const string selectQueryStatement = "SELECT * FROM REQ_ETY_CMM WHERE ETY_NM = 'CUS_REQ' AND ETY_KEY_I = @CUS_REQ_I";
 
-
             var query = Database.CreateQuery(selectQueryStatement);
             query.AddParameter(customerRequest.Comments, CustomerRequestQueryParameters.Identity);
             var result = Database.RunSelect(query);
@@ -33,6 +32,8 @@ namespace EnterpriseSystems.Data.Mappers
 
             return entities;
         }
+
+        
         
     }
 }

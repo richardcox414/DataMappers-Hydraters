@@ -1,0 +1,9 @@
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\UnitTests.Data\bin\Debug\UnitTests.Data.dll
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\UnitTests.Data\bin\Debug\UnitTests.Data.pdb
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\UnitTests.Data\bin\Debug\EnterpriseSystems.Data.dll
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\UnitTests.Data\bin\Debug\Moq.dll
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\UnitTests.Data\bin\Debug\EnterpriseSystems.Data.pdb
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\UnitTests.Data\bin\Debug\Moq.xml
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\UnitTests.Data\obj\Debug\UnitTests.Data.csprojResolveAssemblyReference.cache
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\UnitTests.Data\obj\Debug\UnitTests.Data.dll
+C:\Users\Rick\Source\Repos\EnterpriseSystems..DataMappers-Hydraters\UnitTests.Data\obj\Debug\UnitTests.Data.pdb

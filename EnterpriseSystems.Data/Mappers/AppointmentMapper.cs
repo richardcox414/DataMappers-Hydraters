@@ -24,8 +24,7 @@ namespace EnterpriseSystems.Data.Mappers
         public virtual IEnumerable<AppointmentVO> GetAppointmentsByCustomerRequest(CustomerRequestVO customerRequest)
         {
             const string selectQueryStatement = "SELECT * FROM REQ_ETY_SCH WHERE ETY_NM = 'CUS_REQ' AND ETY_KEY_I = @CUS_REQ_I";
-
-            
+ 
             var query = Database.CreateQuery(selectQueryStatement);
             query.AddParameter(customerRequest.Appointments, CustomerRequestQueryParameters.Identity);
             var result = Database.RunSelect(query);
