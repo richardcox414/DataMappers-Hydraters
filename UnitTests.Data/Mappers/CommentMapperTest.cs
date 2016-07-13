@@ -7,6 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading;
 
 namespace UnitTests.Data.Mappers
 {
@@ -25,20 +26,21 @@ namespace UnitTests.Data.Mappers
         public void TestInitialize()
         {
             InitializeMocks();
-            Target = new CommentMapper(MockDatabase.Object, MockHydrater.Object, MockAppointmentMapper.Object, MockCustomerRequestMapper.Object);
+            Target = new CommentMapper(MockDatabase.Object, MockHydrater.Object, MockCustomerRequestMapper.Object, MockAppointmentMapper.Object);
         }
 
         private void InitializeMocks()
         {
             MockDatabase = new Mock<IDatabase>();
             MockQuery = new Mock<IQuery>();
-            MockHydrater = new Mock<IHydrater<CustomerRequestVO>>();
-            TestHydratedCustomerRequests = new List<CustomerRequestVO>();
+            MockHydrater = new Mock<IHydrater<CommentVO>>();
+            TestHydratedComments = new List<CommentVO>();
             MockAppointmentMapper = new Mock<AppointmentMapper>();
-            MockCommentMapper = new Mock<CommentMapper>();
+            MockCustomerRequestMapper = new Mock<CustomerRequestMapper>();
+
 
             MockDatabase.Setup(m => m.CreateQuery(It.IsAny<string>())).Returns(MockQuery.Object);
-            MockHydrater.Setup(m => m.Hydrate(It.IsAny<DataTable>())).Returns(TestHydratedCustomerRequests);
+            MockHydrater.Setup(m => m.Hydrate(It.IsAny<DataTable>())).Returns(TestHydratedComments);
         }
 
         [TestCleanup]
@@ -48,26 +50,32 @@ namespace UnitTests.Data.Mappers
             MockDatabase = null;
             MockQuery = null;
             MockHydrater = null;
-            TestHydratedCustomerRequests = null;
+            TestHydratedComments = null;
             MockAppointmentMapper = null;
-            MockCommentMapper = null;
+            MockCustomerRequestMapper = null;
         }
 
         [TestMethod]
         public void GetCommentsByCustomerRequest_OnAny_SetsQueryParameter()
         {
+            var customerRequestArguement = new CustomerRequestVO() {BusinessEntityKey = "BusinessName"};
+            customerRequestArguement.Comments.Add(new CommentVO { CommentType = "CommentType"});
             var actual =
-                Target.GetCustomerRequestByIdentity(new CustomerRequestVO {Appointments = new List<AppointmentVO>()});
+                Target.GetCommentsByCustomerRequest(customerRequestArguement);
 
+            MockQuery.Verify(m => m.AddParameter("BusinessName", CustomerRequestQueryParameters.BusinessName), Times.Once);
+            MockQuery.Verify(m => m.AddParameter("Identity", CustomerRequestQueryParameters.Identity), Times.Once);
         }
 
         [TestMethod]
         public void GetCommentsByCustomerRequest_HasQueryMatches_ReturnsHydratedEntities()
         {
-            var hydratedEntity = new CustomerRequestVO();
-            TestHydratedCustomerRequests.Add(hydratedEntity);
+            var customerRequestArgument = new CustomerRequestVO();
+            customerRequestArgument.Comments.Add(new CommentVO());
 
-            var actual =
+            var actual = Target.GetCommentsByCustomerRequest(customerRequestArgument);
+
+            Assert.AreEqual(TestHydratedComments, actual);
         }
     }
 }
