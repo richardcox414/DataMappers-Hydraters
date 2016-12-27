@@ -1,6 +1,7 @@
 # Enterprise Systems Learning: Data Mappers and Hydraters
 
 ## Summary: 
+Assignment for CMPS 415 Enterprise Systems. 
 The Enterprise Systems Learning projects series. 
 Implement the missing data access logic in the data layer for Appointments and Comments.
 
